@@ -29,7 +29,6 @@ func (h *PortUpsertHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	r.ParseMultipartForm(100000)
 
 	if r.MultipartForm != nil {
-		println("----", len(r.MultipartForm.File))
 		for _, f := range r.MultipartForm.File {
 			if len(f) < 1 {
 				return
