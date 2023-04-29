@@ -8,6 +8,19 @@ It also exposes a http server listening on a default port 8000. This server hand
 POST /ports
 ```
 
+Using curl for testing:
+
+```
+curl -svf -X POST -d "$(cat ports.json)" http://localhost:8000/ports
+```
+
+Using multipart upload:
+
+```
+curl -vf -F "uploadFile=@\"ports.json\"" http://localhost:8000/ports
+
+```
+
 ## Running
 
 Using docker-compose:
