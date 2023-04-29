@@ -79,3 +79,4 @@ SERVER_ADDRESS=127.0.0.1:8000
 - Add other data storages for actual persistence of the data
 - Github actions pipeline
 - Improve command-line ux: use cobra, config file, add help/version subcommand, etc
+- Documentation improvements: use openapi, add missing comments
