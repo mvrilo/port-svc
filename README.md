@@ -77,4 +77,5 @@ SERVER_ADDRESS=127.0.0.1:8000
 - Limit configuration for the ports file size
 - HTTP adapter: add logging, metrics and health check - (maybe move from net/http)
 - Add other data storages for actual persistence of the data
-- Github actions
+- Github actions pipeline
+- Improve command-line ux: use cobra, config file, add help/version subcommand, etc
