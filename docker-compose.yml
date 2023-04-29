@@ -1,0 +1,8 @@
+version: '3'
+services:
+  port-svc:
+    image: mvrilo/port-svc
+    build:
+      context: .
+    ports:
+      - 8000:8000

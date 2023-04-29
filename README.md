@@ -1,0 +1,59 @@
+# port-svc
+
+port-svc receives ports information as file and upserts it (insert or update) in a datastore. Current implementation is using an inmemory datastore backed by `map[string]domain.Port` (check [./domain](domain) for more domain definitions).
+
+It also exposes a http server listening on a default port 8000. This server handles incoming requests for upserting ports:
+
+```
+POST /ports
+```
+
+## Running
+
+Using docker-compose:
+
+```
+docker compose up port-svc
+```
+
+## Building
+
+`make build`
+
+or
+
+`go build -o port-svc ./cmd/port-svc/*.go`
+
+## Testing
+
+`make test`
+
+or
+
+`go test -race ./...`
+
+## Configuration
+
+Environment variables (and `.env` file) are supported.
+
+Example:
+
+```
+SERVER_ADDRESS=127.0.0.1:8000
+```
+
+## Architecture overview
+
+```
+.
+├── adapter        # adapter implementations
+│   ├── http       # http adapters
+│   └── inmemory   # in memory adapters
+├── cmd            # binary entrypoints
+│   └── port-svc   # main binary
+├── domain         # domain definitions
+└── usecase        # usecase implementations
+    └── portupsert # main implementation
+
+9 directories
+```
