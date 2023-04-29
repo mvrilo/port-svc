@@ -12,9 +12,9 @@ import (
 
 	"github.com/joho/godotenv"
 	"github.com/kelseyhightower/envconfig"
-	"github.com/mvrilo/go-port-svc/adapter/http"
 	"github.com/mvrilo/go-port-svc/adapter/inmemory"
 	"github.com/mvrilo/go-port-svc/domain"
+	"github.com/mvrilo/go-port-svc/port/http"
 	"github.com/mvrilo/go-port-svc/usecase/portupsert"
 )
 
