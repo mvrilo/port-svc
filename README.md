@@ -8,17 +8,16 @@ It also exposes a http server listening on a default port 8000. This server hand
 POST /ports
 ```
 
-Using curl for testing:
+Using curl for testing, sending data as json:
 
 ```
 curl -svf -X POST -d "$(cat ports.json)" http://localhost:8000/ports
 ```
 
-Using multipart upload:
+Using curl for testing, sending data as multipart upload:
 
 ```
 curl -vf -F "uploadFile=@\"ports.json\"" http://localhost:8000/ports
-
 ```
 
 ## Running
@@ -60,15 +59,16 @@ SERVER_ADDRESS=127.0.0.1:8000
 ```
 .
 ├── adapter        # adapter implementations
-│   ├── http       # http adapters
 │   └── inmemory   # in memory adapters
 ├── cmd            # binary entrypoints
 │   └── port-svc   # main binary
 ├── domain         # domain definitions
+├── port           # port implementations
+│   └── http       # http port (handlers) implementation
 └── usecase        # usecase implementations
     └── portupsert # main implementation
 
-9 directories
+10 directories
 ```
 
 ## Next steps
