@@ -2,7 +2,6 @@ package inmemory
 
 import (
 	"fmt"
-	"time"
 
 	"github.com/mvrilo/go-port-svc/domain"
 )
@@ -16,7 +15,6 @@ func NewPortUpsertInMemoryStorage(db domain.PortMap) *PortUpsertInMemoryStorage 
 }
 
 func (p *PortUpsertInMemoryStorage) debug() {
-	time.Sleep(1 * time.Second)
 	fmt.Printf("current number of records: %d\n", len(p.db))
 }
 
