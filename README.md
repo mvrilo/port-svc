@@ -70,3 +70,11 @@ SERVER_ADDRESS=127.0.0.1:8000
 
 9 directories
 ```
+
+## Next steps
+
+- Validation of the ports file json schema
+- Limit configuration for the ports file size
+- HTTP adapter: add logging, metrics and health check - (maybe move from net/http)
+- Add other data storages for actual persistence of the data
+- Github actions
